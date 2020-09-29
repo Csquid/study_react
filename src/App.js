@@ -1,48 +1,32 @@
 import React, { Component } from 'react';
+import Subject from './components/views/Subject/Subject'
+import NavBar from './components/views/NavBar/NavBar'
+import Content from './components/views/Content/Content'
 import './App.css';
 
-class Subject extends Component {
-    render() {
-        return (
-            <header>
-                <h1>{this.props.title}</h1>
-                {this.props.sub}
-            </header>
-        );
-    }
-}
-class NavBar extends Component {
-    render() {
-        return (
-            <nav>
-                <ul>
-                    <li href="1.html">HTML</li>
-                    <li href="2.html">CSS</li>
-                    <li href="3.html">JavaScript</li>
-                </ul>
-            </nav>
-        );
-    }
-}
-
-class Content extends Component {
-    render() {
-        return (
-            <article>
-                <h2>HTML</h2>
-                HTML is HyperText Markup Language.
-            </article>
-
-        );
-    }
-}
 class App extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            subject: { title: 'WEB', sub: 'world wide web' },
+            contents: [
+                {id:1, title: 'HTML', desc: 'HTML is HyperText ...'},
+                {id:2, title: 'CSS', desc: 'CSS is for design'},
+                {id:3, title: 'JavaScript', desc: 'JavaScript is interactive ...'}
+            ]
+        }
+    }
+
     render() {
         return (
             <div className="App">
-                <Subject title="WEB" sub="world wide web!"></Subject>
-                <NavBar></NavBar>
-                <Content></Content>
+                <Subject 
+                    title={this.state.subject.title} 
+                    sub={this.state.subject.sub}>
+                </Subject>
+                <NavBar data={this.state.contents}></NavBar>
+                <Content title="HTML" desc="HTML is HyperText Markup Language."></Content>
             </div>
         );
     }
