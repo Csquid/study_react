@@ -11,7 +11,7 @@ class ReadContent extends Component {
         return true;
     }
     render() {
-        console.log('render read content');
+        console.log('>> render read content');
 
         return (
             <article>

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class CRUD extends Component {
     render() {
-        console.log('render crud')
+        console.log('>> render crud')
 
         let show_list = [];
         const mode_list = ['create', 'update', 'delete'];

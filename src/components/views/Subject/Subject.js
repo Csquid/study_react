@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Subject extends Component {
 
     render() {
-        console.log('render subject')
+        console.log('>> render subject')
 
         return (
             <header>

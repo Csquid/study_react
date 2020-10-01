@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class NavBar extends Component {
     render() {
-        console.log('render navbar');
+        console.log('>> render navbar');
 
         let lists = [];
         let data = this.props.data;
